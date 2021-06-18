@@ -4,8 +4,9 @@ public abstract class Produtos {
     private String nome;
     private int quantidade;
     private float preco;
+    protected String categoria;
     
-    public abstract void formaPag();
+    public abstract String formaPag();
 
     public Produtos(String nome, int quantidade, float preco) {
         this.nome = nome;
@@ -37,10 +38,25 @@ public abstract class Produtos {
         this.preco = preco;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
     @Override
     public String toString() {
-        return "Produtos{" + "nome=" + nome + ", quantidade=" + quantidade + ", preco=" + preco + '}';
+        String produto = "";
+        produto += "Nome: " + this.nome + "\n";
+        produto += "Quantidade: " + this.quantidade + "\n";
+        produto += "Preço: R$ " + this.preco + "\n";
+        produto += "Categoria: " + this.categoria + "\n";
+        produto += "Forma de Pagamento: " + formaPag();
+        return produto;
     }
 
     
+
 }
