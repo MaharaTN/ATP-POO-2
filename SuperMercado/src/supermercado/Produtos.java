@@ -8,10 +8,11 @@ public abstract class Produtos {
     
     public abstract String formaPag();
 
-    public Produtos(String nome, int quantidade, float preco) {
+    public Produtos(String nome, int quantidade, float preco, String categoria) {
         this.nome = nome;
         this.quantidade = quantidade;
         this.preco = preco;
+        this.categoria = categoria;
     }
 
     public String getNome() {
