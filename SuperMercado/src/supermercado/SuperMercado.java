@@ -61,7 +61,7 @@ public class SuperMercado {
     public void salvaProdutos (ArrayList<Produtos> produtos){
 		ObjectOutputStream outputStream = null;
 		try {
-                    outputStream = new ObjectOutputStream (new FileOutputStream("c:\\temp\\petStore.dados"));
+                    outputStream = new ObjectOutputStream (new FileOutputStream("C:\\dados\\mercado.txt"));
                     for (int i=0; i < produtos.size(); i++)
 			outputStream.writeObject(produtos.get(i));
 		} catch (FileNotFoundException ex) {
@@ -86,7 +86,7 @@ public class SuperMercado {
             ObjectInputStream inputStream = null;         
 		try {
                     inputStream = new ObjectInputStream
-			(new FileInputStream("c:\\temp\\petStore.dados"));
+			(new FileInputStream("C:\\dados\\mercado.txt"));
                     Object obj = null;
 			while ((obj = inputStream.readObject()) != null) {
                             if (obj instanceof Produtos) {
